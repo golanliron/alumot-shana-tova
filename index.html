@@ -145,7 +145,7 @@ h1 .honey::after{
   font-size:clamp(24px,4vw,34px);color:var(--navy-ink);margin:16px 0 8px;
 }
 .ventures .note{font-size:15px;color:rgba(35,42,92,.6);margin-bottom:34px}
-.marquee{position:relative;overflow:hidden;padding:6px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee{position:relative;overflow:hidden;padding:6px 0;background:var(--cream);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .track{display:flex;gap:46px;width:max-content;padding:6px 24px;align-items:center}
 .m1 .track{animation:slideR 46s linear infinite}
 .m2 .track{animation:slideL 52s linear infinite;margin-top:14px}
@@ -265,8 +265,8 @@ h1 .honey::after{
   <section class="ventures reveal">
     <div class="wrap">
       <span class="eyebrow"><span class="dot"></span>האלומה שלנו<span class="dot"></span></span>
-      <h3>המיזמים שצומחים איתנו</h3>
-      <p class="note">אימפקט ונתינה שגדלה וגדלה כל שנה</p>
+      <h3>המיזמים והשותפים שצומחים איתנו</h3>
+      <p class="note">אימפקט ונתינה שגדלה וגדלה כל שנה. תודה רבה לכל אחד ואחת</p>
     </div>
     <div class="marquee m1"><div class="track" id="track1"></div></div>
     <div class="marquee m2"><div class="track" id="track2"></div></div>
@@ -347,10 +347,22 @@ const VENTURES = [
   {n:"ערך לדרך", img:"logos/v03.avif"},
   {n:"Jumpin", img:"logos/v04.avif"},
   {n:"הופה", img:"logos/hopa.png"},
-  {n:"קרן משפחת ברלוביץ׳", img:"logos/berelovitz.png"}
+  {n:"קרן משפחת ברלוביץ׳", img:"logos/berelovitz.png"},
+  {n:"שותף", img:"logos/p01.png"},
+  {n:"שותף", img:"logos/p02.jpg"},
+  {n:"שותף", img:"logos/p03.png"},
+  {n:"שותף", img:"logos/p04.png"},
+  {n:"שותף", img:"logos/p05.jpg"},
+  {n:"שותף", img:"logos/p06.png"},
+  {n:"הכוורת", img:"logos/kaveret.png"},
+  {n:"מכללת ספיר", img:"logos/sapir.webp"},
+  {n:"קרנות הביטוח הלאומי", img:"logos/kranot.png"},
+  {n:"שותף", img:"logos/p10.png"},
+  {n:"שותף", img:"logos/p11.jpg"},
+  {n:"שותף", img:"logos/p12.jpg"}
 ];
 function ventureHTML(v){
-  if(v.img) return `<img class="mq-logo" src="${v.img}" alt="${v.n}" loading="lazy" onerror="this.outerHTML='<span class=&quot;mq-name&quot;><span class=&quot;seed&quot;></span>${v.n}</span>'">`;
+  if(v.img) return `<img class="mq-logo" src="${v.img}" alt="${v.n}" loading="lazy" onerror="this.remove()">`;
   return `<span class="mq-name"><span class="seed"></span>${v.n}</span>`;
 }
 (function(){
