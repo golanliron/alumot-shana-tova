@@ -434,7 +434,29 @@ function dropGrains(n){
     setTimeout(()=>b.remove(),(dur+2)*1000);
   }
 }
+function dropWheat(n){
+  if(reduced) return;
+  const colors=['#F2A71B','#232A5C','#D98E0B','#FBDFA8'];
+  for(let i=0;i<n;i++){
+    const b=document.createElement('div');
+    b.className='bit';
+    const h=26+Math.random()*34;
+    const s=stalkSVG(colors[i%colors.length]);
+    s.style.width=(h*0.25)+'px'; s.style.height=h+'px'; s.style.display='block';
+    s.style.opacity=(0.55+Math.random()*0.45).toFixed(2);
+    b.appendChild(s);
+    const dur=3.6+Math.random()*3;
+    b.style.left=Math.random()*100+'vw';
+    b.style.setProperty('--r0',(Math.random()*360)+'deg');
+    b.style.setProperty('--r1',(Math.random()*720+180)+'deg');
+    b.style.animation=`fall ${dur}s linear ${Math.random()*1.6}s forwards`;
+    document.body.appendChild(b);
+    setTimeout(()=>b.remove(),(dur+2.2)*1000);
+  }
+}
+setTimeout(()=>dropWheat(28), 800);
 document.getElementById('openYear').addEventListener('click',()=>{
+  dropWheat(30);
   document.getElementById('blessing').scrollIntoView({behavior: reduced?'auto':'smooth', block:'center'});
 });
 
