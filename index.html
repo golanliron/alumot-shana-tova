@@ -342,10 +342,8 @@ function plantField(container, count, opts){
     container.appendChild(wrap);
   }
   if(reduced){ container.classList.add('grown'); return; }
-  if(opts.trigger === 'scroll'){
-    const grow = ()=>{ if(scrollY > 40){ container.classList.add('grown'); removeEventListener('scroll', grow); } };
-    addEventListener('scroll', grow, {passive:true});
-    grow();
+  if(opts.trigger === 'load'){
+    setTimeout(()=>container.classList.add('grown'), 1300);
   } else {
     const fio = new IntersectionObserver(es=>es.forEach(e=>{
       if(e.isIntersecting){container.classList.add('grown');fio.disconnect();}
@@ -356,7 +354,7 @@ function plantField(container, count, opts){
 (function(){
   const field = document.getElementById('field');
   const count = Math.max(12, Math.floor(innerWidth/72));
-  plantField(field, count, {heights:[150,95,125,80,165,105,135,90], opacity:.8, trigger:'scroll'});
+  plantField(field, count, {heights:[150,95,125,80,165,105,135,90], opacity:.8, trigger:'load'});
   const bless = document.getElementById('blessField');
   if(bless) plantField(bless, 11, {heights:[190,120,160,100,205,130,175], opacity:.5});
 })();
