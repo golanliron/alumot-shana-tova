@@ -145,6 +145,10 @@ h1 .honey::after{
   font-size:clamp(24px,4vw,34px);color:var(--navy-ink);margin:16px 0 8px;
 }
 .ventures .note{font-size:15px;color:rgba(35,42,92,.6);margin-bottom:34px}
+.big-stat{display:flex;flex-direction:column;align-items:center;gap:0;margin:18px 0 10px}
+.big-stat .num{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:clamp(72px,13vw,128px);line-height:1;color:var(--mustard-deep);direction:ltr}
+.big-stat .lbl{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:clamp(26px,4.6vw,40px);color:var(--navy-ink);margin-top:4px}
+.ventures .note.big-note{font-size:clamp(18px,2.8vw,23px);color:rgba(35,42,92,.8);line-height:1.7;margin-top:14px}
 .marquee{position:relative;overflow:hidden;padding:6px 0;background:var(--cream);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .track{display:flex;gap:46px;width:max-content;padding:6px 24px;align-items:center}
 .m1 .track{animation:slideR 46s linear infinite}
@@ -291,7 +295,8 @@ h1 .honey::after{
     <div class="wrap">
       <span class="eyebrow"><span class="dot"></span>האלומה שלנו<span class="dot"></span></span>
       <h3>תודה לשותפים שלנו</h3>
-      <p class="note">מעל 40 מיזמים חברתיים, אימפקט ונתינה שגדלה וגדלה כל שנה. תודה רבה לכל אחד ואחת</p>
+      <div class="big-stat"><span class="num">40+</span><span class="lbl">מיזמים חברתיים</span></div>
+      <p class="note big-note">אימפקט ונתינה שגדלה וגדלה כל שנה.<br>תודה רבה לכל אחד ואחת</p>
     </div>
   </section>
 
